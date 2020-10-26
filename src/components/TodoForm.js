@@ -14,13 +14,11 @@ class TodoForm extends React.Component {
         });
     };
 
-    // handleSubmit = e => {
-    //     e.preventDefault();
-    //     this.props.handleAddItem(this.state.input);
-    // }
-
     handleSubmit = e => {
         e.preventDefault();
+        this.setState({
+            input: ''
+        })
     }
 
     handleAdd = () => {
