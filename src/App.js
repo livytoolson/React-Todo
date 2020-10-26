@@ -1,7 +1,8 @@
 import React from 'react';
 
-import TodoList from './TodoList';
-import TodoForm from './TodoForm';
+import TodoList from './components/TodoList';
+import TodoForm from './components/TodoForm';
+import './components/Todo.css'
 
 // you will need a place to store your state in this component.
 // design `App` to be the parent component of your application.
