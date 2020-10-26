@@ -10,7 +10,7 @@ return (
         <Todo handleToggleItem={props.handleToggleItem} key={item.id} item={item} />
       ))}
     </div>
-)
-}
+    );
+};
 
 export default TodoList;
