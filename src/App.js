@@ -1,28 +1,27 @@
 import React from 'react';
 
 import TodoList from './TodoList';
-import Todo from './Todo';
 import TodoForm from './TodoForm';
 
 const todo = [
   {
     task: 'Get car washed',
-    id: '1',
+    id: 1,
     completed: false
   },
   {
     task: 'Get teeth cleaned',
-    id: '2',
+    id: 2,
     completed: false
   },
   {
     task: 'Pick up dry cleaning',
-    id: '3',
+    id: 3,
     completed: false
   },
   {
     task: 'Bake birthday cake',
-    id: '4',
+    id: 4,
     completed: false
   },
 ]
@@ -35,16 +34,35 @@ class App extends React.Component {
     }
   }
 
-  handleToggleTodo = () => {
-
+  handleToggleItem = (itemId)=>{
+    this.setState({
+      todo: this.state.todo.map(item=>{
+        if(item.id === itemId) {
+          return {
+            ...item,
+            purchased: !item.purchased
+          }
+        } else {
+          return item;
+        }
+      })
+    })
   }
 
-  handleAddTodo = () => {
-
+  handleAddItem = (task) => {
+    this.setState({
+      todo: [...this.state.todo, {
+        task: task,
+        id: this.state.todo.date.now(),
+        completed: false
+      }]
+    })
   }
 
-  clearTodo = () => {
-
+  handleClearItem = () => {
+    this.setState({
+      todo: this.state.todo.filter(item => (!item.completed))
+    })
   }
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -53,8 +71,8 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm />
-        <TodoList />
+        <TodoForm handleAddItem={this.handleAddItem} handleClearItem={this.handleClearItem}/>
+        <TodoList handleToggleItem={this.handleToggleItem} todo={this.state.todo}/>
       </div>
     );
   }
