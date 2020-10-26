@@ -4,9 +4,17 @@ import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import './components/Todo.css';
 
+import styled from 'styled-components';
+
 // you will need a place to store your state in this component.
 // design `App` to be the parent component of your application.
 // this component is going to take care of state, and any change handlers you need to work with your state
+
+const StyledTitle = styled.h1`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`
 
 const todo = [
   {
@@ -72,12 +80,14 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
-        <div>
-          <h1>Welcome to your Todo App!</h1>
+      <div className="app-wrapper">
+        <div className="todo-form">
+          <StyledTitle>Todo List</StyledTitle>
           <TodoForm handleAddItem={this.handleAddItem} handleClearItem={this.handleClearItem}/>
         </div>
-        <TodoList handleToggleItem={this.handleToggleItem} todo={this.state.todo}/>
+        <div className="todo-list">
+          <TodoList handleToggleItem={this.handleToggleItem} todo={this.state.todo}/>
+        </div>
       </div>
     );
   }
