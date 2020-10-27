@@ -1,31 +1,68 @@
+.app-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .item {
   background-color: skyblue;
-  width: 45%;
+  color: white;
+  width: 150%;
+  height: 50px;
   margin: 4px 0;
   cursor: pointer;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
 }
 .item.completed {
-  background-color: pink;
+  background-color: navy;
   text-decoration: line-through;
 }
 .addBtn{
-  width: 20%;
+  width: 13%;
+  height: 40px;
+  margin-left: 5px;
+  border-style: none;
 }
 .clearBtn{
   width: 100%;
+  height: 40px;
   margin-top: 10px;
   margin-bottom: 10px;
+  border-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .todo-form {
   display:flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+.todo-input {
+  background-color: skyblue;
+  border-style: none;
+  height: 40px;
+}
+::placeholder{
+  padding-left: 5px;
+  color: white;
 }
 .list-item{
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.todo-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input-add{
+  width: 150%;
 }
