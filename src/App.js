@@ -31,7 +31,7 @@ class App extends React.Component {
   state = {
     value: '',
     todo: []
-  }
+  };
     // state = {
     //   todo: todo
     // }
@@ -43,13 +43,13 @@ class App extends React.Component {
           return {
             ...item,
             completed: !item.completed
-          }
+          };
         } else {
           return item;
-        }
+        };
       })
-    })
-  }
+    });
+  };
 
   handleAddItem = (task) => {
     this.setState({
@@ -58,8 +58,8 @@ class App extends React.Component {
         id: Date.now(this.state.todo),
         completed: false
       }]
-    })
-  }
+    });
+  };
 
   handleClearItem = () => {
     this.setState({
@@ -67,13 +67,13 @@ class App extends React.Component {
     });
   };
 
-  numTodos = this.state.todo.length
+  // numTodos = this.state.todo.length
   
   render() {
     return (
       <div>
         <header className="title">Todo List</header>
-        <div className="alert">You have {this.numTodos} tasks on your todo list today!</div>
+        {/* <div className="alert">You have {this.numTodos} tasks on your todo list today!</div> */}
         <div className="app-wrapper">
           <div className="todo-form">
             <TodoForm handleAddItem={this.handleAddItem} handleClearItem={this.handleClearItem}/>
@@ -84,7 +84,7 @@ class App extends React.Component {
         </div>
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;

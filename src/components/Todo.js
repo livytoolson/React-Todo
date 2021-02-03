@@ -4,7 +4,7 @@ import './Todo';
 const Todo = props => {
     const handleClick = () => {
         props.handleToggleItem(props.item.id);
-    }
+    };
 
     return (
         <div className="todo-list">
