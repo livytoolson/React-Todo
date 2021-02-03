@@ -4,28 +4,28 @@ import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import './components/Todo.css';
 
-const todo = [
-  {
-    task: 'Get car washed',
-    id: 123,
-    completed: false
-  },
-  {
-    task: 'Get teeth cleaned',
-    id: 234,
-    completed: false
-  },
-  {
-    task: 'Pick up dry cleaning',
-    id: 345,
-    completed: false
-  },
-  {
-    task: 'Bake birthday cake',
-    id: 456,
-    completed: false
-  },
-];
+// const todo = [
+//   {
+//     task: 'Get car washed',
+//     id: 123,
+//     completed: false
+//   },
+//   {
+//     task: 'Get teeth cleaned',
+//     id: 234,
+//     completed: false
+//   },
+//   {
+//     task: 'Pick up dry cleaning',
+//     id: 345,
+//     completed: false
+//   },
+//   {
+//     task: 'Bake birthday cake',
+//     id: 456,
+//     completed: false
+//   },
+// ];
 
 class App extends React.Component {
   state = {
