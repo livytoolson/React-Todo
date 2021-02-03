@@ -3,6 +3,8 @@
 body {
   font-family: 'Bebas Neue', cursive;
   background-color: #faeadb;
+  color: #faeadb;
+  font-size: 50px;
 }
 .app-wrapper{
   display: flex;
@@ -13,6 +15,7 @@ body {
   min-height: 500px;
   width: 400px;
   margin: 40px auto;
+  box-shadow: 5px 5px 5px 5px #d9b584;
 }
 .item {
   background-color: #d9b584;
@@ -28,14 +31,16 @@ body {
   justify-content: center;
 }
 .item.completed {
-  background-color: #888888;
+  background-color: #d3d0c9;
   text-decoration: line-through;
+  color: #fff;
 }
 .addBtn{
   height: 50px;
   width: 80px;
   border-radius: 10px;
   border: 0;
+  font-size: 20px;
   background-color: #d9b584;
   cursor: pointer;
   font-weight: bolder;
@@ -48,6 +53,9 @@ body {
   margin-top: 5px;
   margin-bottom: 16px;
   border-radius: 10px;
+  color: #fff;
+  font-size: 20px;
+  background-color: #d3d0c9;
   cursor: pointer;
   border-style: none;
   display: flex;
@@ -73,8 +81,9 @@ body {
   border-radius: 10px;
   color: #fff;
 }
-.todo-input input::placeholder{
+.todo-input::placeholder{
   color: #fff;
+  font-size: 20px;
   font-family: 'Bebas Neue', cursive;
 }
 .todo-input:focus, #addBtn:focus{
@@ -84,10 +93,19 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  font-size: 20px;
 }
 .todo-list{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.title {
+  color: #fff;
+  font-size: 100px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

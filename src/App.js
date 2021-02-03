@@ -4,14 +4,6 @@ import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import './components/Todo.css';
 
-import styled from 'styled-components';
-
-const StyledTitle = styled.h1`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-`
-
 const todo = [
   {
     task: 'Get car washed',
@@ -73,15 +65,26 @@ class App extends React.Component {
   
   render() {
     return (
-      <div className="app-wrapper">
-        <div className="todo-form">
-          <StyledTitle>Todo List</StyledTitle>
-          <TodoForm handleAddItem={this.handleAddItem} handleClearItem={this.handleClearItem}/>
-        </div>
-        <div className="todo-list">
-          <TodoList handleToggleItem={this.handleToggleItem} todo={this.state.todo}/>
+      <div>
+        <div className="title">Todo List</div>
+        <div className="app-wrapper">
+          <div className="todo-form">
+            <TodoForm handleAddItem={this.handleAddItem} handleClearItem={this.handleClearItem}/>
+          </div>
+          <div className="todo-list">
+            <TodoList handleToggleItem={this.handleToggleItem} todo={this.state.todo}/>
+          </div>
         </div>
       </div>
+      // <div className="app-wrapper">
+      //   <StyledTitle>Todo List</StyledTitle>
+      //   <div className="todo-form">
+      //     <TodoForm handleAddItem={this.handleAddItem} handleClearItem={this.handleClearItem}/>
+      //   </div>
+      //   <div className="todo-list">
+      //     <TodoList handleToggleItem={this.handleToggleItem} todo={this.state.todo}/>
+      //   </div>
+      // </div>
     );
   }
 }
