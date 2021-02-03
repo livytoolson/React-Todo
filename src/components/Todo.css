@@ -2,19 +2,25 @@
 
 body {
   font-family: 'Bebas Neue', cursive;
+  background-color: #faeadb;
 }
 .app-wrapper{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
+  min-height: 500px;
+  width: 400px;
+  margin: 40px auto;
 }
 .item {
-  background-color: skyblue;
+  background-color: #d9b584;
   color: white;
-  width: 150%;
+  width: 175%;
   height: 50px;
   margin: 4px 0;
+  border-radius: 10px;
   cursor: pointer;
   display: flex;
   flex-wrap: wrap;
@@ -22,20 +28,27 @@ body {
   justify-content: center;
 }
 .item.completed {
-  background-color: navy;
+  background-color: #888888;
   text-decoration: line-through;
 }
 .addBtn{
-  width: 13%;
-  height: 40px;
-  border-style: none;
+  height: 50px;
+  width: 80px;
+  border-radius: 10px;
+  border: 0;
+  background-color: #d9b584;
+  cursor: pointer;
+  font-weight: bolder;
   font-family: 'Bebas Neue', cursive;
+  color: #fff;
 }
 .clearBtn{
-  width: 100%;
-  height: 40px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  width: 50%;
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  cursor: pointer;
   border-style: none;
   display: flex;
   flex-direction: row;
@@ -50,14 +63,22 @@ body {
   justify-content: center;
 }
 .todo-input {
-  background-color: skyblue;
-  border-style: none;
-  height: 40px;
+  background-color: #d9b584;
+  border: none;
+  width: 200px;
+  height: 50px;
+  padding: 0 20px;
+  margin: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: #fff;
 }
-::placeholder{
-  padding-left: 5px;
-  color: white;
+.todo-input input::placeholder{
+  color: #fff;
   font-family: 'Bebas Neue', cursive;
+}
+.todo-input:focus, #addBtn:focus{
+  outline: none;
 }
 .list-item{
   display: flex;
@@ -69,7 +90,4 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.input-add{
-  width: 150%;
 }
