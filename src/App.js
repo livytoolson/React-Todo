@@ -28,9 +28,13 @@ const todo = [
 ];
 
 class App extends React.Component {
-    state = {
-      todo: todo
-    }
+  state = {
+    value: '',
+    todo: []
+  }
+    // state = {
+    //   todo: todo
+    // }
 
   handleToggleItem = (itemId) => {
     this.setState({
@@ -57,10 +61,7 @@ class App extends React.Component {
     })
   }
 
-  handleClearItem = (index) => {
-    // const newArr = [...this.state.todo];
-    // newArr.splice(index, 1);
-    // this.setState({todo: newArr})
+  handleClearItem = () => {
     this.setState({
       todo: this.state.todo.filter(item => (!item.completed))
     });
@@ -72,7 +73,7 @@ class App extends React.Component {
     return (
       <div>
         <header className="title">Todo List</header>
-        <alert className="alert">You have {this.numTodos} tasks on your todo list today!</alert>
+        <div className="alert">You have {this.numTodos} tasks on your todo list today!</div>
         <div className="app-wrapper">
           <div className="todo-form">
             <TodoForm handleAddItem={this.handleAddItem} handleClearItem={this.handleClearItem}/>
