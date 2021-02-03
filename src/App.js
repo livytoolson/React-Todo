@@ -57,16 +57,22 @@ class App extends React.Component {
     })
   }
 
-  handleClearItem = () => {
+  handleClearItem = (index) => {
+    // const newArr = [...this.state.todo];
+    // newArr.splice(index, 1);
+    // this.setState({todo: newArr})
     this.setState({
       todo: this.state.todo.filter(item => (!item.completed))
     });
   };
+
+  numTodos = this.state.todo.length
   
   render() {
     return (
       <div>
-        <div className="title">Todo List</div>
+        <header className="title">Todo List</header>
+        <alert className="alert">You have {this.numTodos} tasks on your todo list today!</alert>
         <div className="app-wrapper">
           <div className="todo-form">
             <TodoForm handleAddItem={this.handleAddItem} handleClearItem={this.handleClearItem}/>
@@ -76,15 +82,6 @@ class App extends React.Component {
           </div>
         </div>
       </div>
-      // <div className="app-wrapper">
-      //   <StyledTitle>Todo List</StyledTitle>
-      //   <div className="todo-form">
-      //     <TodoForm handleAddItem={this.handleAddItem} handleClearItem={this.handleClearItem}/>
-      //   </div>
-      //   <div className="todo-list">
-      //     <TodoList handleToggleItem={this.handleToggleItem} todo={this.state.todo}/>
-      //   </div>
-      // </div>
     );
   }
 }
