@@ -52,7 +52,7 @@ class App extends React.Component {
   };
 
   handleAddItem = (task) => {
-    this.setState({
+    this.setState ({
       todo: [...this.state.todo, {
         task: task,
         id: Date.now(this.state.todo),
